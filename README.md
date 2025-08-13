@@ -2,13 +2,13 @@
 
 ## Overview
 
-1. Generate Certificates: https://regery.com/en/security/ssl-tools/self-signed-certificate-generator
-2. APISIX Supported TLS Versions:
-  1. 3.13
-    1. JSONSchema: https://github.com/apache/apisix/blob/master/apisix/schema_def.lua#L851
-    2. Versions: TLS1.1, TLS1.2, TLS1.3
-  2. 1.41
-    1. Versions: TLSv1 TLSv1.1 TLSv1.2 TLSv1.3
+1. Self-Generated Certificate：[https://regery.com/en/security/ssl-tools/self-signed-certificate-generator](https://regery.com/en/security/ssl-tools/self-signed-certificate-generator)
+2. APISIX Supported TLS Versions
+   1. 3.13
+      1. JSONSchema: [https://github.com/apache/apisix/blob/master/apisix/schema_def.lua#L851](https://github.com/apache/apisix/blob/master/apisix/schema_def.lua#L851)
+      2. Versions: TLS1.1, TLS1.2, TLS1.3
+   2. 1.41
+      1. Versions: TLSv1 TLSv1.1 TLSv1.2 TLSv1.3
 
 ## Deploy APISIX
 

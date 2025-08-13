@@ -1,5 +1,7 @@
 # APISIX TLS
 
+A working configuration that enables TLS 1.1 for Apache APISIX.
+
 ## Overview
 
 1. Self-Generated Certificate：[https://regery.com/en/security/ssl-tools/self-signed-certificate-generator](https://regery.com/en/security/ssl-tools/self-signed-certificate-generator)
@@ -29,16 +31,6 @@ $ docker run -d \
     apache/apisix:3.13.0-ubuntu
 
 $ ./adc sync -f adc.yaml
-```
-
-## Test Cases
-
-```sh
-curl --tls-max 1.1 --tlsv1.1  https://example-tls11.com:9443 -v -k -I
-
-curl --tls-max 1.2 --tlsv1.2  https://example-tls12.com:9443 -v -k -I
-
-curl --tls-max 1.2 --tlsv1.2  https://localhost:9443 -H "Host: example-tls12.com" -v -k -I
 ```
 
 ## Default Behavior

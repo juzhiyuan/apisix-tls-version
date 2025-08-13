@@ -1,0 +1,74 @@
+consumers: []
+global_rules: {}
+plugin_metadata: {}
+services:
+  - name: HTTPBIN Service
+    routes:
+      - name: Get UUID
+        enable_websocket: false
+        hosts:
+          - localhost
+        methods:
+          - GET
+        priority: 0
+        uris:
+          - /uuid
+    upstream:
+      name: HTTPBIN
+      hash_on: vars
+      nodes:
+        - host: httpbin.org
+          port: 443
+          priority: 0
+          weight: 0
+      pass_host: node
+      scheme: https
+      type: roundrobin
+ssls:
+  - labels:
+      localhost: l
+    certificates:
+      - certificate: >
+          -----BEGIN CERTIFICATE-----
+
+          MIIDhDCCAmygAwIBAgIEZnK88zANBgkqhkiG9w0BAQsFADBbMScwJQYDVQQDDB5SZWdlcnkgU2Vs
+
+          Zi1TaWduZWQgQ2VydGlmaWNhdGUxIzAhBgNVBAoMGlJlZ2VyeSwgaHR0cHM6Ly9yZWdlcnkuY29t
+
+          MQswCQYDVQQGEwJVQTAgFw0yNTA4MTMwMDAwMDBaGA8yMTI1MDgxMzA2NDMxNFowRjESMBAGA1UE
+
+          AwwJbG9jYWxob3N0MSMwIQYDVQQKDBpSZWdlcnksIGh0dHBzOi8vcmVnZXJ5LmNvbTELMAkGA1UE
+
+          BhMCVUEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDM/LYAJbH5QXmvrEqo+oY2FjfF
+
+          MYdE4S5YMUOsOR7lJgIps2mueDt5RKoBXbczVEi7sG7XrowLvm1CR+a8hhphNhSbwBhwacTJC7Mp
+
+          sT1pm4to1jVD/SJAWJRG2f6slw/kK3PJfteH5F4YUugsvcqG1Isaus0xTODoHSwxISQByEdNFYBY
+
+          7RqQ4veNhL7RdGLoHlYlf21ojCAZQcZUzQpBceaFRpd8mS860nb1jJwxZRvI4hMhr73s8b771Y3/
+
+          E367iZV4BF9mOKR5+hNGyJGlVpgxtwQ6dwnmTMP2w0ZQuRnzP4UIuAkn88cs1UnLojVhn6bp6Y7D
+
+          O7L/nyC+VpkfAgMBAAGjYzBhMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGGMB0GA1Ud
+
+          DgQWBBQTbxQzjQncceyyVsMydRWHNUWi7jAfBgNVHSMEGDAWgBQTbxQzjQncceyyVsMydRWHNUWi
+
+          7jANBgkqhkiG9w0BAQsFAAOCAQEAJMStkPe+5XEADUauI0gpq+S0Q4fGCYgSJf6i136Wttc+nHm4
+
+          Aor+bJeUwYOKXJDq7Ui99/RwFsitvNrIaawINjABd8ZNwerHVm0LYND9f8HiH99U44L9/ga2PyV6
+
+          PaKuLbSX3KahEdBadKHeyQQs52oCqDUmzt4PMSgssBvE+1N75WrVDSs++RHrEvsuncEhKW7rDWtf
+
+          IhZqNovlNNTG/c/sp3WPVuJmoz7lvHTkajZ9KQGSKH6y2LSBttetGQYDJ3Gljqa1ma6BcWc1M85y
+
+          4xPksFD0zwK+PV8DiuuvEsS01iU6k9zuBjUGL+jwQ1klA05Wk+QzYwv4hjkhtb8rFQ==
+
+          -----END CERTIFICATE-----
+        key: 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
+    snis:
+      - localhost
+    ssl_protocols:
+      - TLSv1.1
+      - TLSv1.2
+      - TLSv1.3
+    type: server

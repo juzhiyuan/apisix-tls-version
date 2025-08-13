@@ -171,6 +171,8 @@ curl: (35) LibreSSL/3.3.6: error:1404B410:SSL routines:ST_CONNECT:sslv3 alert ha
 
 ## TLS 1.1 After Modification
 
+After using the customized [config](./apisix/config.yaml) file with TLS 1.1 enabled.
+
 ```sh
 curl --tls-max 1.1 --tlsv1.1 https://localhost:9443/uuid -v -k
 
